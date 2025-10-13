@@ -30,7 +30,7 @@ jobs:
       
       # Cache TexLive dependencies based on texlive.profile file hash
       - name: cache dependencies
-        uses: actions/cache@v1
+        uses: actions/cache@v4
         with:
           path: |
             ~/.texlive2021
