@@ -55,6 +55,8 @@ jobs:
       #  run: ./scripts/test.sh sidebarleft
       - name: Change Directory to Sidebarleft
         run: cd sidebarleft/
+      - name: Change Directory to Sidebarleft
+        run: ls -lah
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
