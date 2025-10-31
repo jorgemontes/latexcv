@@ -27,19 +27,19 @@ jobs:
         with:
           packages: texlive texlive-base texlive-latex-extra texlive-fonts-extra
           version: 1.0
-      
+
       # Cache TexLive dependencies based on texlive.profile file hash
-      # - name: cache dependencies
-      #  uses: actions/cache@v4
-      #  with:
-      #    path: |
-      #      ~/.texlive2021
-      #      /usr/bin/latex
-      #      /usr/local/texlive/
-      #      /usr/bin/tex
-      #    key: ${{ runner.os }}-texlive-${{ hashFiles('**/texlive.profile') }}
-      #    restore-keys: |
-      #      ${{ runner.os }}-texlive-
+      - name: cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.texlive2021
+            /usr/bin/latex
+            /usr/local/texlive/
+            /usr/bin/tex
+          key: ${{ runner.os }}-texlive-${{ hashFiles('**/texlive.profile') }}
+          restore-keys: |
+            ${{ runner.os }}-texlive-
 
       # Cache TexLive dependencies based on texlive.profile file hash
 
@@ -47,9 +47,15 @@ jobs:
         run: sudo apt-get update
 
       # Runs a single command using the runners shell
-      - name: Install tex-live
-        run: sudo apt-get install --fix-missing -y texlive texlive-base texlive-latex-extra texlive-fonts-extra
+      #- name: Install tex-live
+      #  run: sudo apt-get install --fix-missing -y texlive texlive-base texlive-latex-extra texlive-fonts-extra
 
       # Runs a set of commands using the runners shell
-      - name: Run build script
-        run: ./scripts/test.sh sidebarleft
+      #- name: Run build script
+      #  run: ./scripts/test.sh sidebarleft
+      - name: Change Directory to Sidebarleft
+        run: cd sidebarleft/
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
