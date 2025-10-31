@@ -29,17 +29,17 @@ jobs:
           version: 1.0
       
       # Cache TexLive dependencies based on texlive.profile file hash
-      - name: cache dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.texlive2021
-            /usr/bin/latex
-            /usr/local/texlive/
-            /usr/bin/tex
-          key: ${{ runner.os }}-texlive-${{ hashFiles('**/texlive.profile') }}
-          restore-keys: |
-            ${{ runner.os }}-texlive-
+      # - name: cache dependencies
+      #  uses: actions/cache@v4
+      #  with:
+      #    path: |
+      #      ~/.texlive2021
+      #      /usr/bin/latex
+      #      /usr/local/texlive/
+      #      /usr/bin/tex
+      #    key: ${{ runner.os }}-texlive-${{ hashFiles('**/texlive.profile') }}
+      #    restore-keys: |
+      #      ${{ runner.os }}-texlive-
 
       # Cache TexLive dependencies based on texlive.profile file hash
 
