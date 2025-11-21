@@ -25,6 +25,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Change Directory to Sidebarleft
         run: cd sidebarleft/
+      - name: Download pic from gravatar 
+        run: wget https://www.gravatar.com/avatar/${{ secrets.GRAVATAR_HASH }}.jpeg?s=400 -O jorgemontes.jpeg
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
