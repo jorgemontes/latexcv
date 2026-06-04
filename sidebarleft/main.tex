@@ -261,7 +261,7 @@
 % param 1: the text
 \newcommand{\cvtag}[1] {%
   \tikz[baseline=(char.base)]%
-  \node[anchor=north west,draw=maincol,fill=maincol,rounded corners=3pt,inner sep=3pt,text=white,font=\footnotesize\textbf] (char) {#1};%
+  \node[draw=maincol,fill=maincol,rounded corners=3pt,inner sep=3pt,text=white] (char) {\footnotesize\textbf{#1}};%
 }
 
 %----------------------------------------------------------------------------------------
@@ -529,7 +529,7 @@ Recognized for being honest, collaborative, and highly self-motivated, with stro
 		\item Online overview of company structures, projects, etc
 		\item Tools for role review, reporting and troubleshooting
 	}}
-	{\cvtag{Java} \cvtag{Spring Batch}}
+	{\cvtag{Java}\quad\cvtag{Spring Batch}}
 
 \vfill\null
 \cvevent
