@@ -267,13 +267,14 @@
     inner sep=3pt,
     text=white,
     signal,
-    signal to=east,
-    signal from=none,
+    signal to=none,
+    signal from=west,
     minimum height=1.35em,
+    anchor=base,
     append after command={
-      (\tikzlastnode.west) node[fill=white, circle, minimum size=2.5pt, inner sep=0pt, xshift=4.5pt] {}
+      (\tikzlastnode.west) node[fill=white, circle, minimum size=2.5pt, inner sep=0pt, xshift=1.5pt] {}
     }
-  ] (char) {\kern4.5pt\footnotesize\textbf{#1}};%
+  ] (char) {\kern2.5pt\footnotesize\textbf{#1}};%
 }
 
 %----------------------------------------------------------------------------------------
@@ -326,7 +327,7 @@
 
 	\ifthenelse{\isempty{#8}}{}{
 		\vspace{5pt}
-		{#8}
+		\noindent{#8}
 	}
 	\vspace{14pt}
 }
@@ -541,7 +542,7 @@ Recognized for being honest, collaborative, and highly self-motivated, with stro
 		\item Online overview of company structures, projects, etc
 		\item Tools for role review, reporting and troubleshooting
 	}}
-	{\cvtag{Java}\hspace{6pt}\cvtag{Spring Batch}\hspace{6pt}\cvtag{Spring Batch}\hspace{6pt}\cvtag{Spring Batch}}
+	{\cvtag{Java}\hspace{6pt}\cvtag{ElasticSearch}\hspace{6pt}\cvtag{Perl}\hspace{6pt}\cvtag{Spring Boot}}
 
 \vfill\null
 \cvevent
@@ -568,7 +569,7 @@ Recognized for being honest, collaborative, and highly self-motivated, with stro
 		\item Fully automated migration of old systems into cloud with Ansible playbooks/roles
 		\item Django tool on LDAP - Schema Review
 	}}
-	{}
+	{\cvtag{Java}\hspace{6pt}\cvtag{ElasticSearch}\hspace{6pt}\cvtag{Perl}\hspace{6pt}\cvtag{Spring Boot}}
 
 \vfill\null
 \cvevent
