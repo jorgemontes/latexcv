@@ -254,6 +254,17 @@
 
 
 %----------------------------------------------------------------------------------------
+%	 CV TAG
+%----------------------------------------------------------------------------------------
+
+% Renders a text with a rounded background
+% param 1: the text
+\newcommand{\cvtag}[1] {%
+  \tikz[baseline=(char.base)]%
+  \node[anchor=north west,draw=maincol,fill=maincol,rounded corners=3pt,inner sep=3pt,text=white,font=\footnotesize\textbf] (char) {#1};%
+}
+
+%----------------------------------------------------------------------------------------
 %	 CV EVENT
 %----------------------------------------------------------------------------------------
 
@@ -268,7 +279,8 @@
 % param 5: work done (optional)
 % param 6: technologies include (optional)
 % param 7: achievements (optional)
-\newcommand{\cvevent}[7] {
+% param 8: tags (optional)
+\newcommand{\cvevent}[8] {
 	
 	% we wrap this part in a parbox, so title and description are not separated on a pagebreak
 	% if you need more control on page breaks, remove the parbox
@@ -298,6 +310,11 @@
 		\vspace{9pt}
 		\cvtext{\textbf{Achievements include:}}\\
 		{#7}
+	}
+
+	\ifthenelse{\isempty{#8}}{}{
+		\vspace{5pt}
+		{#8}
 	}
 	\vspace{14pt}
 }
@@ -477,9 +494,9 @@ This numerical approach was highly optimised for cluster computing and implement
 \cvsection{PROFILE}
 
 \cvtext{
-\textbf A {Systems Engineer} with extensive knowledge and experience in \textbf{Software Engineering} and \textbf{Software Development} for enterprise applications. 
+\textbf {Systems Engineer} with extensive knowledge and experience in \textbf{Software Engineering} and \textbf{Software Development} for enterprise applications.
 
-Contributed to key software applications across diverse markets, including banking, healthcare, and the airline industry to support flight operations. Possesses extensive experience in both \textbf{cloud-based} and \textbf{on-premises} infrastructure. 
+Contributed to key software applications across diverse markets, including banking, healthcare, and the airline industry which support flight operations. Possesses extensive experience in both \textbf{cloud-based} and \textbf{on-premises} infrastructure.
 
 Recognized for being honest, collaborative, and highly self-motivated, with strong self-learning capabilities. Has contributed to mission-critical software projects with a direct impact on human life.
 }
@@ -512,6 +529,7 @@ Recognized for being honest, collaborative, and highly self-motivated, with stro
 		\item Online overview of company structures, projects, etc
 		\item Tools for role review, reporting and troubleshooting
 	}}
+	{\cvtag{Java} \cvtag{Spring Batch}}
 
 \vfill\null
 \cvevent
@@ -538,6 +556,7 @@ Recognized for being honest, collaborative, and highly self-motivated, with stro
 		\item Fully automated migration of old systems into cloud with Ansible playbooks/roles
 		\item Django tool on LDAP - Schema Review
 	}}
+	{}
 
 \vfill\null
 \cvevent
@@ -566,6 +585,7 @@ Recognized for being honest, collaborative, and highly self-motivated, with stro
 		\item Extended the python-ldap library with interfaces for simplified access and modification of LDAP-Objects and searches
 		\item  Introduction of a complete and reliable centralized logging solution including log filtering and alerting for both windows and Linux systems
 	}}
+	{}
 
 \vfill\null
 \cvevent
@@ -589,6 +609,7 @@ Recognized for being honest, collaborative, and highly self-motivated, with stro
 		\item Implementing code coverage and dynamic code checker for c++ legacy source code based on gcov
 		\item Introduction of Python + Environment in project
 	}}
+	{}
 
 \vfill\null
 \cvevent
@@ -612,9 +633,9 @@ Recognized for being honest, collaborative, and highly self-motivated, with stro
 	{\cvlist{
 		\item Customized wiki and documentation application for developers with Jenkins and Git integration
 		\item Django web application to test the product performance using selenium tests in background with customizable tests / test
-environments ad a graphical evaluation using the jqPlot library (also Jaiascript / jQuery)
 		\item Improvement of the overall code quality by raising test coverage (+ \~30\%) and identification + elimination of potential code flaws
 	}}
+	{}
 
 \vfill\null
 \cvevent
@@ -639,6 +660,7 @@ environments ad a graphical evaluation using the jqPlot library (also Jaiascript
 		\item Definition of uniform standards
 		\item Introduction of the standard Linux stack as global toolset for data analysis in project
 	}}
+	{}
 
 % hotfixes to create fake-space to ensure the whole height is used
 \mbox{}
