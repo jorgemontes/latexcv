@@ -267,14 +267,14 @@
     inner sep=3pt,
     text=white,
     signal,
-    signal to=none,
-    signal from=west,
+    signal to=west,
+    signal from=none,
     minimum height=1.35em,
     anchor=base,
     append after command={
-      (\tikzlastnode.west) node[fill=white, circle, minimum size=2.5pt, inner sep=0pt, xshift=1.5pt] {}
+      (\tikzlastnode.west) node[fill=white, circle, minimum size=2.5pt, inner sep=0pt, xshift=-1.5pt] {}
     }
-  ] (char) {\kern2.5pt\footnotesize\textbf{#1}};%
+  ] (char) {\kern2pt\footnotesize\textbf{#1}};%
 }
 
 %----------------------------------------------------------------------------------------
