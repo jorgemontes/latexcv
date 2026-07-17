@@ -277,6 +277,9 @@
   ] (char) {\kern5pt\footnotesize\textbf{#1}};%
 }
 
+% line break with a little extra vertical space, safe to use between cvtags
+\newcommand{\cvtagnl}{\\[2pt]}
+
 %----------------------------------------------------------------------------------------
 %	 CV EVENT
 %----------------------------------------------------------------------------------------
@@ -327,7 +330,12 @@
 
 	\ifthenelse{\isempty{#8}}{}{
 		\vspace{5pt}
+		\begingroup
+		\raggedright
+		\setlength{\baselineskip}{1.6em}
 		\noindent{#8}
+		\par
+		\endgroup
 	}
 	\vspace{14pt}
 }
@@ -517,7 +525,9 @@ Recognized for being honest, collaborative, and highly self-motivated, with stro
 		\item Drove automation, reliability, and audit readiness in highly regulated systems
 	}}
 	{}{}
-	{\cvtag{CDP - Customer Data Platforms}\hspace{6pt}\cvtag{Java Spring}\hspace{6pt}\cvtag{Bash}\hspace{6pt}\cvtag{Linux - Redhat}\hspace{6pt}\cvtag{Spring Security}\hspace{6pt}\cvtag{SoapUI}\hspace{6pt}\cvtag{Log4j}\hspace{6pt}\cvtag{Kubernetes}\hspace{6pt}\cvtag{Apache Hadoop}\hspace{6pt}\cvtag{SQL}\hspace{6pt}\cvtag{IBM Websphere Commerce on Cloud}\hspace{6pt}\cvtag{Java}\hspace{6pt}\cvtag{REST}\hspace{6pt}\cvtag{Jenkins}\hspace{6pt}\cvtag{CI/CD}\hspace{6pt}\cvtag{Spring Boot}\hspace{6pt}\cvtag{Git}\hspace{6pt}\cvtag{Perl}\hspace{6pt}\cvtag{Apache Tomcat}\hspace{6pt}\cvtag{Spring Batch}}
+	{\cvtag{CDP - Customer Data Platforms}\hspace{6pt}\cvtag{Java Spring}\hspace{6pt}\cvtag{Bash}\hspace{6pt}\cvtag{Linux - Redhat}\hspace{6pt}\cvtag{Spring Security}\hspace{6pt}\cvtag{SoapUI}\hspace{6pt}\cvtag{Log4j}\cvtagnl
+	\cvtag{Kubernetes}\hspace{6pt}\cvtag{Apache Hadoop}\hspace{6pt}\cvtag{SQL}\hspace{6pt}\cvtag{IBM Websphere Commerce on Cloud}\hspace{6pt}\cvtag{Java}\hspace{6pt}\cvtag{REST}\cvtagnl
+	\cvtag{Jenkins}\hspace{6pt}\cvtag{CI/CD}\hspace{6pt}\cvtag{Spring Boot}\hspace{6pt}\cvtag{Git}\hspace{6pt}\cvtag{Perl}\hspace{6pt}\cvtag{Apache Tomcat}\hspace{6pt}\cvtag{Spring Batch}}
 
 \vfill\null
 \cvevent
